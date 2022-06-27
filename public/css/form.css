@@ -394,3 +394,18 @@ section .formulir{
     border-radius: 3px;
     cursor: pointer;
 }
+
+.formulir .form .input_field .undo-sign{
+    width: 30%;
+    padding: 8px 10px;
+    font-size: 9px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    border: 2px solid #BF400A;
+    background: #fff;
+    color: #BF400A;
+    cursor: pointer;
+    border-radius: 3px;
+    outline: none;
+}

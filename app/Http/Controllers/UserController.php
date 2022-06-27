@@ -23,7 +23,7 @@ class UserController extends Controller
 	    $file = $folderPath . $request->nama_belakang . '.'.$image_type;
         $filename = $request->nama_belakang.'.'.$image_type;
 	    
-        $validator = Validator::make($request->all(), [
+        $request->validate([
             'nama_depan' => 'required',
             'nama_belakang' => 'required',
             'tgl_lahir' => 'required',
@@ -32,14 +32,9 @@ class UserController extends Controller
             'email' => 'required',
             'sosial_media' => 'required',
             'trip' => 'required',
-            'signed' => 'required'
+            'signed' => 'required',
         ]);
-
-        if ($validator->fails()) {
-            return back()->with('error', $validator->messages()->all()[0])->withInput();
-        }else {
-            file_put_contents($file, $image_base64);
-        }
+        file_put_contents($file, $image_base64);
 
         Checkin::create([
             'nama_depan' => $request->nama_depan,

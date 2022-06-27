@@ -40,9 +40,10 @@
                 </div>
             </div>
             <div class="media-icons">
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></i></a>
+                <a href="https://web.facebook.com/petalodgejogja/?_rdc=1&_rdr"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/petalodgejogja/?hl=en"><i class="fa-brands fa-instagram"></i></i></a>
                 <a href="#"><i class="fa-brands fa-whatsapp"></i></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></i></a>
             </div>
         </div>
     </section>
@@ -64,31 +65,52 @@
 				@csrf
                 <div class="input_field">
                     <label>Nama Depan</label>
-                    <input type="text" class="input" name="nama_depan">
+                    <input type="text" class="input" name="nama_depan" required>
+                    @error("nama_depan")
+                        <p class="text-danger"><b>Nama Depan wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Nama Belakang</label>
-                    <input type="text" class="input" name="nama_belakang">
+                    <input type="text" class="input" name="nama_belakang" required>
+                    @error("nama_belakang")
+                        <p class="text-danger"><b>Nama Belakang wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Tanggal Lahir</label>
-                    <input type="date" class="input" name="tgl_lahir">
+                    <input type="date" class="input" name="tgl_lahir" required>
+                    @error("tgl_lahir")
+                        <p class="text-danger"><b>tanggal Lahir wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Domisili</label>
-                    <input type="text" class="input" name="domisili">
+                    <input type="text" class="input" name="domisili" required>
+                    @error("domisili")
+                        <p class="text-danger"><b>Domisili wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Nomor Handphone</label>
-                    <input type="text" class="input" name="no_hp">
+                    <input type="number" class="input" name="no_hp" required>
+                    @error("no_hp")
+                        <p class="text-danger"><b>Nomor Handphone wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Email</label>
-                    <input type="text" class="input" name="email">
+                    <input type="text" class="input" name="email" required>
+                    @error("email")
+                        <p class="text-danger"><b>Email wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
-                    <label>Sosial Media</label>
-                    <input type="text" class="input" name="sosial_media">
+                    <label>Instagram</label>
+                    <input type="text" class="input" name="sosial_media" required>
+                    @error("sosial_media")
+                        <p class="text-danger"><b>Instagram wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field">
                     <label>Jenis Trip</label>
@@ -133,8 +155,11 @@
                     <label>Tanda Tangan</label>
                     <div id="sig" ></div>
                     <br/>
-                    <button id="clear" class="btn btn-danger btn-sm">Clear Signature</button>
-                    <textarea id="signature64" name="signed" style="display: none"></textarea>
+                    <button id="clear" class="undo-sign">Clear Signature</button>
+                    <textarea id="signature64" name="signed" style="display: none" required></textarea>
+                    @error("signed")
+                        <p class="text-danger"><b>Signature wajib diisi!</b></p>
+                    @enderror
                 </div>
                 <div class="input_field terms">
                     <label class="check">
