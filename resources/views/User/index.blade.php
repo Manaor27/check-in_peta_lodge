@@ -51,6 +51,10 @@
 		<div class="alert alert-success">
 			{{ session('success_message') }}
 		</div>
+        @else
+        <div class="alert alert-error">
+			{{ session('error_message') }}
+		</div>
 		@endif
         <div class="formulir" id="formulir">
             <div class="title">
