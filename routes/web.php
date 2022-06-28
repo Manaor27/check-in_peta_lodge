@@ -17,7 +17,6 @@ use App\Http\Controllers\AdminController;
 */
 
 Route::get('/', [UserController::class, 'index']);
-Route::get('/m', [AdminController::class, 'index']);
 Route::post('/', [UserController::class, 'upload'])->name('simpan');
 Route::get('/login', [AdminController::class, 'login']);
 
@@ -30,5 +29,7 @@ Route::middleware(['auth'])->group(function () {
     Route::middleware(['admin'])->group(function () {
         Route::get('admin', [AdminController::class, 'index']);
         Route::get('download/{id}', [AdminController::class, 'download']);
+        Route::get('peraturan', [AdminController::class, 'peraturan']);
+        Route::put('/', [AdminController::class, 'simpan'])->name('simpanPeraturan');
     });
 });

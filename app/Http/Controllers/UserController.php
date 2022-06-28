@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Checkin;
+use App\Models\Peraturan;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
     public function index()
     {
-    	return view('user.index');
+        $p = Peraturan::find(1);
+    	return view('user.index', compact('p'));
     }
 
     public function upload(Request $request)
