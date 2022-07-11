@@ -25,7 +25,7 @@
     <center><b><u>Peraturan Hostel Peta Lodge</u></b></center>
     <div style="text-align: justify; font-size: 13px;"><?php echo $p->peraturan; ?></div>
     <p>
-        <b>Dengan menandatangani form ini, maka Anda setuju untuk mengikuti peraturan-peraturan di atas. Mohon tanda tangan di bawah ini.</b>
+        Dengan menandatangani form ini, maka Anda setuju untuk mengikuti peraturan-peraturan di atas.
     </p>
     <table>
         <tr>

@@ -25,7 +25,7 @@ class UserController extends Controller
 	    $file = $folderPath . $request->nama_belakang . '.'.$image_type;
         $filename = $request->nama_belakang.'.'.$image_type;
 	    
-        $request->validate([
+        $validasi = $request->validate([
             'nama_depan' => 'required',
             'nama_belakang' => 'required',
             'tgl_lahir' => 'required',
@@ -36,6 +36,7 @@ class UserController extends Controller
             'trip' => 'required',
             'signed' => 'required',
         ]);
+
         file_put_contents($file, $image_base64);
 
         Checkin::create([
