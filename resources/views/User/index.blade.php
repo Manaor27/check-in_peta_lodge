@@ -40,8 +40,8 @@
                 </div>
             </div>
             <div class="media-icons">
-                <a href="https://web.facebook.com/petalodgejogja/?_rdc=1&_rdr"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/petalodgejogja/?hl=en"><i class="fa-brands fa-instagram"></i></i></a>
+                <a href="https://www.facebook.com/petalodgejogja/"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/petalodgejogja/"><i class="fa-brands fa-instagram"></i></i></a>
                 <a href="https://wa.link/i3ytnv"><i class="fa-brands fa-whatsapp"></i></i></a>
                 <a href="https://www.youtube.com/channel/UCHtqdrOhHsT9NMGwpDGhj0A"><i class="fa-brands fa-youtube"></i></i></a>
             </div>
