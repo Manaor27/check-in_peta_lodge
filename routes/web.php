@@ -16,9 +16,12 @@ use App\Http\Controllers\AdminController;
 |
 */
 
-Route::get('/', [UserController::class, 'index']);
+Route::get('/', function() {
+    return view('user.error');
+});
+Route::get('/guest-online-check-in', [UserController::class, 'index']);
 Route::post('/', [UserController::class, 'upload'])->name('simpan');
-Route::get('/login', [AdminController::class, 'login']);
+Route::get('/admin', [AdminController::class, 'login']);
 
 Auth::routes();
 
@@ -27,9 +30,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [App\Http\Controllers\HomeController::class, 'logout'])->name('logout');
 
     Route::middleware(['admin'])->group(function () {
-        Route::get('admin', [AdminController::class, 'index']);
+        Route::get('beranda', [AdminController::class, 'index']);
         Route::get('download/{id}', [AdminController::class, 'download']);
         Route::get('peraturan', [AdminController::class, 'peraturan']);
         Route::put('/', [AdminController::class, 'simpan'])->name('simpanPeraturan');
+        Route::get('user', [AdminController::class, 'user']);
+        Route::get('tambahuser', [AdminController::class, 'tambahuser']);
+        Route::post('/', [AdminController::class, 'simpanuser'])->name('simpanUser');
+        Route::get('/edituser{id}', [AdminController::class, 'edituser']);
+        Route::put('/update/{id}', [AdminController::class, 'updateuser']);
+        Route::get('/delete/{id}', [AdminController::class, 'deleteuser']);
     });
 });

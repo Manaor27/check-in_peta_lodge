@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>Kelola User</title>
   <link rel="icon" href="img/lpl.png" type="image/png" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -61,7 +61,7 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="home" class="nav-link active">
+            <a href="home" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -77,7 +77,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="user" class="nav-link">
+            <a href="user" class="nav-link active">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Kelola User
@@ -103,7 +103,7 @@
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Check-In</li>
+              <li class="breadcrumb-item active">Kelola User</li>
             </ol>
           </div>
         </div>
@@ -122,28 +122,24 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <a href="tambahuser" class="btn btn-info"><i class="fas fa-plus"></i> Tambah Admin</a>
+                <table id="example2" class="table table-bordered table-striped">
                   <thead>
                   <tr>
                     <th>Nama</th>
-                    <th>No Handphone</th>
-                    <th>Tanggal Lahir</th>
-                    <th>Asal</th>
                     <th>Email</th>
-                    <th>Trip</th>
-                    <th>Download Agreement</th>
+                    <th>Setting</th>
                   </tr>
                   </thead>
                   <tbody>
-                    @foreach($data as $d)
+                    @foreach($user as $u)
                   <tr>
-                    <td>{{$d->nama_depan . " " . $d->nama_belakang}}</td>
-                    <td>{{$d->no_hp}}</td>
-                    <td>{{$d->tanggal_lahir}}</td>
-                    <td>{{$d->domisili}}</td>
-                    <td>{{$d->email}}</td>
-                    <td>{{$d->jenis_trip}}</td>
-                    <td><a href="{{url('/download/'. $d->id)}}" type="button" class="btn btn-primary"><i class="fas fa-print"></i></a></td>
+                    <td>{{$u->name}}</td>
+                    <td>{{$u->email}}</td>
+                    <td>
+                        <a href="{{url('/edituser'. $u->id)}}" type="button" class="btn btn-primary"><i class="fas fa-pen"></i></a>
+                        <a href="{{url('/delete/'. $u->id)}}" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                    </td>
                   </tr>
                   @endforeach
                   </tbody>
@@ -188,12 +184,15 @@
 <script src="style/dist/js/demo.js"></script>
 <!-- Page specific script -->
 <script>
-  $(function () {
-    $("#example1").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
-      "buttons": ["excel", "pdf"]
-    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
-  });
+  $('#example2').DataTable({
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
 </script>
 </body>
 </html>

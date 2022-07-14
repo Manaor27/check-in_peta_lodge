@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Home</title>
+  <title>Peraturan</title>
   <link rel="icon" href="img/lpl.png" type="image/png" />
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
@@ -77,6 +77,14 @@
               <i class="nav-icon fas fa-pen"></i>
               <p>
                 Update Peraturan
+              </p>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="user" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Kelola User
               </p>
             </a>
           </li>
