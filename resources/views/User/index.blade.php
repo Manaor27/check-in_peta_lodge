@@ -40,10 +40,10 @@
                 </div>
             </div>
             <div class="media-icons">
-                <a href="https://www.facebook.com/petalodgejogja/"><i class="fa-brands fa-facebook"></i></a>
-                <a href="https://www.instagram.com/petalodgejogja/"><i class="fa-brands fa-instagram"></i></i></a>
-                <a href="https://wa.link/i3ytnv"><i class="fa-brands fa-whatsapp"></i></i></a>
-                <a href="https://www.youtube.com/channel/UCHtqdrOhHsT9NMGwpDGhj0A"><i class="fa-brands fa-youtube"></i></i></a>
+                <a href="https://www.facebook.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-instagram"></i></i></a>
+                <a href="https://wa.link/i3ytnv" target="_blank"><i class="fa-brands fa-whatsapp"></i></i></a>
+                <a href="https://www.youtube.com/channel/UCHtqdrOhHsT9NMGwpDGhj0A" target="_blank"><i class="fa-brands fa-youtube"></i></i></a>
             </div>
         </div>
     </section>
@@ -61,7 +61,7 @@
             <div class="title">
                 Form Check-In
             </div>
-            <form id="quickForm" class="form" method="POST" action="{{ route('simpan') }}" enctype="multipart/form-data">
+            <form id="quickForm" class="form" method="POST" action="simpanCheckin" enctype="multipart/form-data">
                 @csrf
                 <div class="input_field form-group">
                     <label>Nama Depan</label>
@@ -69,27 +69,27 @@
                 </div>
                 <div class="input_field form-group">
                     <label>Nama Belakang</label>
-                    <input type="text" class="input" name="nama_belakang">
+                    <input type="text" class="input" name="nama_belakang" value="{{ old('nama_belakang') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Tanggal Lahir</label>
-                    <input type="date" class="input" name="tgl_lahir" max="<?php echo date('Y-m-d'); ?>">
+                    <input type="date" class="input" name="tgl_lahir" max="<?php echo date('Y-m-d'); ?>" value="{{ old('tgl_lahir') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Domisili</label>
-                    <input type="text" class="input" name="domisili">
+                    <input type="text" class="input" name="domisili" value="{{ old('domisili') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Nomor Handphone</label>
-                    <input type="number" class="input" name="no_hp">
+                    <input type="number" class="input" name="no_hp" value="{{ old('no_hp') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Email</label>
-                    <input type="text" class="input" name="email">
+                    <input type="text" class="input" name="email" value="{{ old('email') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Instagram</label>
-                    <input type="text" class="input" name="sosial_media">
+                    <input type="text" class="input" name="sosial_media" value="{{ old('sosial_media') }}">
                 </div>
                 <div class="input_field form-group">
                     <label>Jenis Trip</label>
@@ -137,11 +137,6 @@
     <!-- Page specific script -->
 <script>
 $(function () {
-  $.validator.setDefaults({
-    submitHandler: function () {
-      alert( "Form successful submitted!" );
-    }
-  });
   $('#quickForm').validate({
     rules: {
       nama_depan: {
