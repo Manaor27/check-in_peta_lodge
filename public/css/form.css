@@ -15,7 +15,7 @@ section .welcome{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    background: url(dummyhostel.jpg);
+    background: rgb(46, 7, 7);
     background-size: cover;
     background-position: center;
 }
@@ -66,7 +66,7 @@ header .logo {
 }
 
 body {
-    background: #BF400A;
+    background: #FFFFFF;
 }
 
 section .formulir{
@@ -98,7 +98,7 @@ section .formulir{
 }
 
 .content .info-isi:hover{
-    background: rgb(46, 7, 7);
+    background: rgb(99, 48, 48);
 }
 
 .formulir{

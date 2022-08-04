@@ -39,6 +39,9 @@
                     <a href="#formulir" class="info-isi">Online Check-In</a>
                 </div>
             </div>
+            <div class="logo2">
+                <img src="img/Artboard.png" width="500" height="400" id="logo">
+            </div>
             <div class="media-icons">
                 <a href="https://www.facebook.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-instagram"></i></i></a>
@@ -220,6 +223,7 @@ $(function () {
   });
 });
 </script>
+<script src="js/index.js"></script>
 	@include('sweetalert::alert')
 </body>
 </html>
