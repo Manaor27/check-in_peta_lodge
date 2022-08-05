@@ -19,9 +19,9 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function() {
     return view('user.error');
 });
-Route::get('/guest-online-check-in', [UserController::class, 'index']);
-Route::post('/simpanCheckin', [UserController::class, 'upload']);
-Route::get('/admin', [AdminController::class, 'login']);
+Route::get('guest-online-check-in', [UserController::class, 'index']);
+Route::post('simpanCheckin', [UserController::class, 'upload']);
+Route::get('admin', [AdminController::class, 'login']);
 
 Auth::routes();
 

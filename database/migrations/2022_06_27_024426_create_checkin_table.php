@@ -20,7 +20,7 @@ class CreateCheckinTable extends Migration
             $table->date('tanggal_lahir');
             $table->string('domisili');
             $table->string('no_hp');
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('sosial_media');
             $table->string('jenis_trip');
             $table->string('signature');
