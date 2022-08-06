@@ -8,56 +8,57 @@
     scroll-behavior: smooth;
 }
 
-section .welcome{
-    position: relative;
+.container{
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    padding-left: 8%;
+    padding-right: 8%;
+    box-sizing: border-box;
+    overflow: hidden;
     background: rgb(46, 7, 7);
-    background-size: cover;
-    background-position: center;
 }
 
-header{
-    position: relative;
-    top: 0;
+.navbar{
     width: 100%;
-    padding: 30px 40px;
     display: flex;
     align-items: center;
 }
 
-header .logo {
+.logo{
+    width: 50px;
+    cursor: pointer;
+    margin: 30px 0; 
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px;
+}
+
+.col-1{
+    flex-basis: 40%;
     position: relative;
-    color: #000;
+    margin-left: 0px;
 }
 
-.content{
-    max-width: 500px;
-    margin:10px 40px;
-
-}
-
-.content .info h2{
-    color: white;
+.col-1 h2{
     font-size: 30px;
-    font-weight: 800;
+    color: white;
+    font-weight: 100;
     letter-spacing: 2px;
-    line-height: 60px;
     margin-bottom: 10px;
-
 }
 
-.content .info h2 span{
+.col-1 h2 span{
     color: white;
-    text-transform: uppercase;
     font-size: 40px;
     font-weight: 600;
+    text-transform: uppercase;
 }
 
-.content .info p{
+.col-1 p{
     color: white;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 16px;
@@ -66,7 +67,82 @@ header .logo {
 }
 
 body {
-    background: #FFFFFF;
+    background: white;
+}
+
+.row .info-isi{
+    color: #fff;
+    background: #BF400A;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    border-radius: 5px;  
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.row .info-isi:last-child{
+    margin-bottom: 0;
+}
+
+.row .info-isi:hover{
+    background: rgb(99, 48, 48);
+}
+
+.col-2{
+    position: relative;
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.col-2 .welcome{
+    width: 90%;
+}
+
+.media-icons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 70px;
+    cursor: pointer;
+}
+
+.media-icons a{
+    position: relative;
+    color: white;
+    font-size: 25px;
+    transition: 0.3s;
+    transition-property: transform;
+}
+
+.media-icons a:not(:last-child){
+    margin-right: 60px;
+
+}
+
+.media-icons a:hover{
+    transform:scale(1.5);
+}
+
+@media only screen and (max-width: 720px){
+    .formulir .form .input_field{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .formulir .form .input_field label{
+        margin-bottom: 5px;
+    }
+    .formulir .form .input_field.terms{
+        flex-direction: row;
+    }
+    .row{
+        flex-direction: column-reverse;
+    }
+    .col-2{
+        margin-bottom: 50px;
+    }
 }
 
 section .formulir{
@@ -79,26 +155,6 @@ section .formulir{
     background: white;
     background-size: cover;
     background-position: center;
-}
-
-.content .info-isi{
-    color: #fff;
-    background: #BF400A;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 2px;
-    padding: 10px 20px;
-    border-radius: 5px;  
-    font-family: 'Source Sans Pro', sans-serif;
-}
-
-.content .info-isi:last-child{
-    margin-bottom: 0;
-}
-
-.content .info-isi:hover{
-    background: rgb(99, 48, 48);
 }
 
 .formulir{
@@ -266,19 +322,6 @@ section .formulir{
     background: rgb(46, 7, 7);
 }
 
-@media (max-width: 420px){
-    .formulir .form .input_field{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .formulir .form .input_field label{
-        margin-bottom: 5px;
-    }
-    .formulir .form .input_field.terms{
-        flex-direction: row;
-    }
-}
-
 .terms-box{
     max-width: 460px;
     background-color: #fff;
@@ -316,30 +359,6 @@ section .formulir{
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     text-align: center;
-}
-
-.media-icons{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-}
-
-.media-icons a{
-    position: relative;
-    color: white;
-    font-size: 25px;
-    transition: 0.3s;
-    transition-property: transform;
-}
-
-.media-icons a:not(:last-child){
-    margin-right: 60px;
-
-}
-
-.media-icons a:hover{
-    transform:scale(1.5);
 }
 
 .popup a{

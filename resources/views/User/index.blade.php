@@ -9,8 +9,7 @@
 	<link rel="icon" href="img/lpl.png" type="image/png" />
     <link rel="stylesheet" href="css/form.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-    <link type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/south-street/jquery-ui.css" rel="stylesheet"> 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>  
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/jquery.signature.min.js"></script>
     <script type="text/javascript" src="js/jquery.ui.touch-punch.min.js"></script>
@@ -25,23 +24,23 @@
     </style>
 </head>
 <body>
-    <section>
-        <div class="welcome" id="welcome">
-            <header>
-                <div class="logo">
-                    <img src="img/lpl.png" width="50" height="50">
-                </div>
-            </header>
-            <div class="content">
-                <div class="info">
+<section>
+        <div class="container">
+            <div class="navbar">
+                <img src="img/lpl.png" class="logo">
+            </div>
+
+            <div class="row">
+                <div class="col-1">
                     <h2>Selamat Datang di <br><span>Peta Lodge Yogyakarta!</span></h2>
                     <p>Dear travelers, terimakasih telah mempercayakan kami sebagai tempat menginap anda di kota Yogyakarta. Silahkan klik tombol di bawah untuk melakukan proses check-in secara online.</p>
                     <a href="#formulir" class="info-isi">Online Check-In</a>
                 </div>
+                <div class="col-2">
+                        <img src="img/Artboard.png" class="welcome">
+                </div>
             </div>
-            <div class="logo2">
-                <img src="img/Artboard.png" width="500" height="400" id="logo">
-            </div>
+
             <div class="media-icons">
                 <a href="https://www.facebook.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                 <a href="https://www.instagram.com/petalodgejogja/" target="_blank"><i class="fa-brands fa-instagram"></i></i></a>

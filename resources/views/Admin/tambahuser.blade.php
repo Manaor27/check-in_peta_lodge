@@ -127,18 +127,18 @@
                     @csrf
                     <div class="form-group">
                         <label>Nama</label>
-                        <input type="text" class="form-control" placeholder="Ketik nama disini" name="nama">
+                        <input type="text" class="form-control" placeholder="Ketik nama disini" name="nama" id="nama">
                     </div>
                     <div class="form-group">
                         <label>Email</label>
-                        <input type="email" class="form-control" placeholder="Ketik email disini" name="email">
+                        <input type="email" class="form-control" placeholder="Ketik email disini" name="email" id="email">
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Ketik password disini" name="password">
+                        <input type="password" class="form-control" placeholder="Ketik password disini" name="password" id="password">
                     </div>
                     <br>
-                    <button type="submit" class="btn btn-block btn-primary">Simpan</button>
+                    <button type="submit" class="btn btn-block btn-primary" id="button" disabled>Simpan</button>
                 </form>
               </div>
               <!-- /.card-body -->
@@ -165,5 +165,21 @@
 <script src="style/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="style/dist/js/demo.js"></script>
+<script>
+  function myEmpty() {
+    let nama = document.getElementById("nama").value;
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+    var button = document.getElementById("button");
+    if (nama != "" && email != "" && pass != "") {
+      button.disabled = false;
+    } else {
+      button.disabled = true;
+    }
+  }
+  document.getElementById("nama").addEventListener("keyup", myEmpty);
+  document.getElementById("email").addEventListener("keyup", myEmpty);
+  document.getElementById("password").addEventListener("keyup", myEmpty);
+</script>
 </body>
 </html>
