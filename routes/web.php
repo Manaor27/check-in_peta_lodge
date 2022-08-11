@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('tambahuser', [AdminController::class, 'tambahuser']);
         Route::post('/', [AdminController::class, 'simpanuser'])->name('simpanUser');
         Route::get('/edituser{id}', [AdminController::class, 'edituser']);
-        Route::put('/update/{id}', [AdminController::class, 'updateuser']);
+        Route::put('/update{id}', [AdminController::class, 'updateuser']);
         Route::get('/delete/{id}', [AdminController::class, 'deleteuser']);
     });
 });

@@ -54,7 +54,7 @@ class AdminController extends Controller
         User::create([
             'name' => $request->nama,
             'email' => $request->email,
-            'password' => $request->password,
+            'password' => Hash::make($request->password),
             'role' => 'admin'
         ]);
         return redirect('user')->with('success', 'Sukses Ditambahkan!');
@@ -69,10 +69,10 @@ class AdminController extends Controller
         $u = User::find($id);
         $u->name = $request->nama;
         $u->email = $request->email;
-        if ($request->password1=="") {
-            $user->password = $request->password2;
+        if ($request->password1==null) {
+            $u->password = $request->password2;
         }else {
-            $user->password = Hash::make($request->password1);
+            $u->password = Hash::make($request->password1);
         }
         $u->save();
         return redirect('/user');

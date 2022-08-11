@@ -123,7 +123,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-body">
-                <form method="POST" action="update/{{$u->id}}">
+                <form method="POST" action="update{{$u->id}}">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
@@ -136,7 +136,7 @@
                     </div>
                     <div class="form-group">
                         <label>Password</label>
-                        <input type="password" class="form-control" placeholder="Ketik password disini" name="password1">
+                        <input type="password" class="form-control" placeholder="Ketik password disini" name="password1" value="{{ $u->password }}">
                         <p>Jika tidak ingin mengubah password silahkan kosongkan saja!</p>
                         <input type="hidden" class="form-control" name="password2" value="{{ $u->password }}">
                     </div>
