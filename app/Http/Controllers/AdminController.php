@@ -13,7 +13,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        $data = Checkin::all();
+        $data = Checkin::orderBy('id','DESC')->get();
     	return view('admin.home', compact('data'));
     }
 
@@ -55,7 +55,7 @@ class AdminController extends Controller
             'name' => $request->nama,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'admin'
+            'role' => $request->role
         ]);
         return redirect('user')->with('success', 'Sukses Ditambahkan!');
     }
@@ -74,6 +74,7 @@ class AdminController extends Controller
         }else {
             $u->password = Hash::make($request->password1);
         }
+        $u->role = $request->role;
         $u->save();
         return redirect('/user');
     }

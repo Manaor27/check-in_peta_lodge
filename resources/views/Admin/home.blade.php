@@ -68,6 +68,7 @@
               </p>
             </a>
           </li>
+          @if(Auth::user()->role == 'admin')
           <li class="nav-item">
             <a href="peraturan" class="nav-link">
               <i class="nav-icon fas fa-pen"></i>
@@ -84,6 +85,7 @@
               </p>
             </a>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -143,7 +145,11 @@
                     <td>{{$d->domisili}}</td>
                     <td>{{$d->email}}</td>
                     <td>{{$d->jenis_trip}}</td>
+                    @if(Auth::user()->role == 'admin')
                     <td><a href="{{url('/download/'. $d->id)}}" type="button" class="btn btn-primary"><i class="fas fa-print"></i></a></td>
+                    @else
+                    <td><a href="{{url('/unduh/'. $d->id)}}" type="button" class="btn btn-primary"><i class="fas fa-print"></i></a></td>
+                    @endif
                   </tr>
                   @endforeach
                   </tbody>

@@ -64,6 +64,7 @@
               </p>
             </a>
           </li>
+          @if(Auth::user()->role == 'admin')
           <li class="nav-item">
             <a href="peraturan" class="nav-link">
               <i class="nav-icon fas fa-pen"></i>
@@ -80,6 +81,7 @@
               </p>
             </a>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -139,6 +141,13 @@
                         <input type="password" class="form-control" placeholder="Ketik password disini" name="password1" value="{{ $u->password }}">
                         <p>Jika tidak ingin mengubah password silahkan kosongkan saja!</p>
                         <input type="hidden" class="form-control" name="password2" value="{{ $u->password }}">
+                    </div>
+                    <div class="form-group">
+                      <label>Role</label>
+                      <select name="role" class="form-control">
+                        <option value="admin" <?php if($u->role == 'admin') {echo 'selected';} ?>>Admin</option>
+                        <option value="receptionist" <?php if($u->role == 'receptionist') {echo 'selected';} ?>>Receptionist</option>
+                      </select>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-block btn-primary">Simpan</button>

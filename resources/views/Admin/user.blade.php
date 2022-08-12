@@ -68,6 +68,7 @@
               </p>
             </a>
           </li>
+          @if(Auth::user()->role == 'admin')
           <li class="nav-item">
             <a href="peraturan" class="nav-link">
               <i class="nav-icon fas fa-pen"></i>
@@ -77,13 +78,14 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="user" class="nav-link active">
+            <a href="user" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>
                 Kelola User
               </p>
             </a>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -128,6 +130,7 @@
                   <tr>
                     <th>Nama</th>
                     <th>Email</th>
+                    <th>Role</th>
                     <th>Setting</th>
                   </tr>
                   </thead>
@@ -136,6 +139,7 @@
                   <tr>
                     <td>{{$u->name}}</td>
                     <td>{{$u->email}}</td>
+                    <td>{{$u->role}}</td>
                     <td>
                         <a href="{{url('/edituser'. $u->id)}}" type="button" class="btn btn-primary"><i class="fas fa-pen"></i></a>
                         <a href="{{url('/delete/'. $u->id)}}" type="button" class="btn btn-danger"><i class="fas fa-trash"></i></a>

@@ -27,7 +27,9 @@ class HomeController extends Controller
         $role = Auth::user()->role;
         if($role == "admin") {
             return redirect()->to('beranda');
-        }else {
+        } elseif ($role == "receptionist") {
+            return redirect()->to('dashboard');
+        } else {
             return redirect()->to('logout');
         }
     }

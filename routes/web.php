@@ -41,4 +41,9 @@ Route::middleware(['auth'])->group(function () {
         Route::put('/update{id}', [AdminController::class, 'updateuser']);
         Route::get('/delete/{id}', [AdminController::class, 'deleteuser']);
     });
+
+    Route::middleware(['receptionist'])->group(function () {
+        Route::get('dashboard', [AdminController::class, 'index']);
+        Route::get('unduh/{id}', [AdminController::class, 'download']);
+    });
 });

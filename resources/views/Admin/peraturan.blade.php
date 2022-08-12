@@ -72,8 +72,9 @@
               </p>
             </a>
           </li>
+          @if(Auth::user()->role == 'admin')
           <li class="nav-item">
-            <a href="peraturan" class="nav-link active">
+            <a href="peraturan" class="nav-link">
               <i class="nav-icon fas fa-pen"></i>
               <p>
                 Update Peraturan
@@ -88,6 +89,7 @@
               </p>
             </a>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

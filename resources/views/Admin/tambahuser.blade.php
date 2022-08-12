@@ -64,6 +64,7 @@
               </p>
             </a>
           </li>
+          @if(Auth::user()->role == 'admin')
           <li class="nav-item">
             <a href="peraturan" class="nav-link">
               <i class="nav-icon fas fa-pen"></i>
@@ -80,6 +81,7 @@
               </p>
             </a>
           </li>
+          @endif
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
@@ -136,6 +138,13 @@
                     <div class="form-group">
                         <label>Password</label>
                         <input type="password" class="form-control" placeholder="Ketik password disini" name="password" id="password">
+                    </div>
+                    <div class="form-group">
+                      <label>Role</label>
+                      <select name="role" class="form-control">
+                        <option value="admin">Admin</option>
+                        <option value="receptionist">Receptionist</option>
+                      </select>
                     </div>
                     <br>
                     <button type="submit" class="btn btn-block btn-primary" id="button" disabled>Simpan</button>
